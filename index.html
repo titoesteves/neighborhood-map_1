@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Project 5</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12" id="search">
+               <input type="text" name="search" class="controls pac-input" placeholder="Search Box" data-bind="value: search, valueUpdate: 'afterkeydown'">
+            </div>
+            <!-- col-md-12 search -->
+         </div>
+         <!-- row -->
+         <div class="row">
+            <div class="col-sm-3 col-md-3 col-xs-3 list">
+               <ul class="list-unstyled" data-bind="foreach: filterResults">
+                  <li class="list" data-bind="text: title, click: $parent.setLoc"></li>
+               </ul>
+               <hr>
+               <h4 id="wikipedia-header">Relevant Wikipedia Links</h4>
+               <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+            </div>
+            <!-- col-md-3 list -->
+            <div class="col-sm-9 col-md-9 col-xs-9">
+               <div id="map-canvas"></div>
+            </div>
+            <!-- col-md-9 map -->
+         </div>
+         <!-- row -->
+      </div>
+      <!-- container -->
+      <script src="js/lib/knockout-3.2.0.js"></script>
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="js/map.js"></script>
+   </body>
+</html>
